@@ -1,0 +1,6 @@
+{
+    "cmake.configureOnEdit": false,
+    "cmake.configureOnOpen": false,
+    "cmake.outputLogEncoding": "65001",
+    "cmake.generator": "Ninja"
+}

@@ -1,0 +1,79 @@
+# Generated .gitignore for a CMake + Clang (MinGW) Windows project
+# 忽略构建输出、临时文件、IDE和系统文件
+
+# Build directories
+/build/
+/out/
+**/build/
+**/out/
+
+# CMake generated files
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CMakeLists.txt.user
+Makefile
+Makefile.cmake
+Testing/
+CTestTestfile.cmake
+DartConfiguration.tcl
+
+# compile commands (generated)
+compile_commands.json
+
+# Object files and libraries
+*.o
+*.obj
+*.lo
+*.la
+*.a
+*.lib
+*.dll
+*.so
+*.dylib
+*.exe
+*.out
+
+# Debug files
+*.pdb
+*.ilk
+*.stackdump
+
+# Logs
+*.log
+
+# Visual Studio
+*.sln
+*.vcxproj*
+.vs/
+*.vcxproj.user
+*.VC.db
+*.VC.VC.opendb
+
+# VS Code (如果你希望把个人配置排除，取消注释下面一行)
+# .vscode/
+
+# Temporary / editor files
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# macOS
+.DS_Store
+
+# Windows thumbnail/cache
+Thumbs.db
+ehthumbs.db
+
+# Python/cache
+__pycache__/
+*.pyc
+
+# Other
+*.zip
+*.7z
+*.tar
+
+# End of .gitignore
