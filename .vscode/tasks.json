@@ -2,22 +2,36 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "CMake Build",
-            "type": "shell",
-            "command": "cmake --build --preset clang-debug",
-            // "args": [
-            //     "--build",
-            //     "--preset",
-            //     "clang-debug"
-            // ],
-            "options": {
-                "shell": {
-                    "executable": "cmd.exe",
-                    "args": [
-                        "/C"
-                    ]
-                }
+            "label": "CMake Configure",
+            "type": "process",
+            "command": "cmake",
+            "args": [
+                "-S",
+                ".",
+                "-B",
+                "build",
+                "-G",
+                "MinGW Makefiles",
+                "-DCMAKE_C_COMPILER=D:/001_software/037_llvm/llvm/bin/clang.exe",
+                "-DCMAKE_CXX_COMPILER=D:/001_software/037_llvm/llvm/bin/clang++.exe",
+                "-DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
             },
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake Build",
+            "type": "process",
+            "command": "cmake",
+            "args": [
+                "--build",
+                "build"
+            ],
+            "dependsOn": "CMake Configure",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -28,26 +42,9 @@
                 "clear": true,
                 "close": false
             },
-            "problemMatcher": {
-                "owner": "cpp",
-                "fileLocation": [
-                    "relative",
-                    "${workspaceFolder}"
-                ],
-                "pattern": {
-                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
-                    "file": 1,
-                    "line": 2,
-                    "column": 3,
-                    "severity": 4,
-                    "message": 5
-                },
-                "background": {
-                    "activeOnStart": true,
-                    "beginsPattern": "^\\[.*\\] Building",
-                    "endsPattern": "^\\[.*\\] Built target"
-                }
-            }
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
     ]
 }

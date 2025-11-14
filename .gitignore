@@ -6,6 +6,7 @@
 /out/
 **/build/
 **/out/
+/.cache/
 
 # CMake generated files
 CMakeFiles/
