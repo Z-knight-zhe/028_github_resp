@@ -5,10 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Clang Debug",
+            "name": "hello_world",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/main.exe",
+            "program": "${workspaceFolder}/build/hello_world.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "CMake Build"
+        },
+        {
+            "name": "test_001",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/test_001.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "CMake Build"
