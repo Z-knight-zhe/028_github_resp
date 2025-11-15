@@ -11,41 +11,19 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# 为主程序生成可执行文件
-# add_executable(main main.cpp)
-
-# 为src/001_hello_world/hello_world.cpp生成可执行文件
-add_executable(hello_world src/001_hello_world/hello_world.cpp)
-target_include_directories(hello_world PRIVATE ${LLVM_INCLUDE_DIR})
-
-# 为src/002_template/001_test.cpp生成可执行文件
-add_executable(test_001 src/002_template/001_test.cpp)
-target_include_directories(test_001 PRIVATE ${LLVM_INCLUDE_DIR})
-
 include(CTest)
 enable_testing()
 
-# GoogleTest integration (optional)
+# GoogleTest integration
 include(GNUInstallDirs)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+add_subdirectory(3rd_lib/googletest)
 
-# Allow using a local googletest source directory (e.g. a git submodule) by
-# passing -DGTEST_SRC=/path/to/googletest to cmake. If not provided, fall back
-# to FetchContent which will download googletest from the network.
-if(DEFINED GTEST_SRC)
-	message(STATUS "Using local GoogleTest from: ${GTEST_SRC}")
-	add_subdirectory(${GTEST_SRC} ${CMAKE_BINARY_DIR}/googletest EXCLUDE_FROM_ALL)
-else()
-    // 因为项目使用的动态库，所以gtest也要使用动态库
-    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-	add_subdirectory(3rd_lib/googletest)
-endif()
-
-# Example unit test target (will be built if sources exist)
-if(EXISTS "${CMAKE_SOURCE_DIR}/src/tests/unit_tests.cpp")
-  add_executable(unit_tests src/tests/unit_tests.cpp)
-  target_link_libraries(unit_tests PRIVATE gtest_main)
-  target_include_directories(unit_tests PRIVATE ${LLVM_INCLUDE_DIR})
-  include(GoogleTest)
-  gtest_discover_tests(unit_tests)
-endif()
+# 递归添加 src 下所有子目录
+file(GLOB children RELATIVE "${CMAKE_SOURCE_DIR}/src" "${CMAKE_SOURCE_DIR}/src/*")
+foreach(child ${children})
+    if(IS_DIRECTORY "${CMAKE_SOURCE_DIR}/src/${child}")
+        add_subdirectory("src/${child}")
+    endif()
+endforeach()
 

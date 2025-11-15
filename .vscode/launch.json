@@ -5,28 +5,28 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "hello_world",
+            "name": "001_hello_world",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/hello_world.exe",
+            "program": "${workspaceFolder}/build/src/001_hello_world/001_hello_world.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "CMake Build"
         },
         {
-            "name": "test_001",
+            "name": "002_template",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/test_001.exe",
+            "program": "${workspaceFolder}/build/src/002_template/002_template.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "CMake Build"
         },
         {
-            "name": "unit_tests",
+            "name": "tests",
             "type": "lldb",
             "request": "launch",
-            "program": "${workspaceFolder}/build/unit_tests.exe",
+            "program": "${workspaceFolder}/build/src/tests/tests.exe",
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "CMake Build"
