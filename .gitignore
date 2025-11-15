@@ -19,6 +19,18 @@ Testing/
 CTestTestfile.cmake
 DartConfiguration.tcl
 
+#google test build files
+3rd_lib/googletest/build/
+3rd_lib/googletest/bin/
+3rd_lib/googletest/lib/
+3rd_lib/googletest/**/CMakeFiles/
+3rd_lib/googletest/**/Makefile
+3rd_lib/googletest/**/cmake_install.cmake
+3rd_lib/googletest/**/CTestTestfile.cmake
+3rd_lib/googletest/**/Testing/
+3rd_lib/googletest/**/compile_commands.json
+3rd_lib/googletest/**/CMakeCache.txt
+
 # compile commands (generated)
 compile_commands.json
 

@@ -21,6 +21,15 @@
             "args": [],
             "cwd": "${workspaceFolder}",
             "preLaunchTask": "CMake Build"
+        },
+        {
+            "name": "unit_tests",
+            "type": "lldb",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/unit_tests.exe",
+            "args": [],
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "CMake Build"
         }
     ]
 }

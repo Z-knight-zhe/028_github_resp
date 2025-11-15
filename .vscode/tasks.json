@@ -45,6 +45,23 @@
             "problemMatcher": [
                 "$gcc"
             ]
+        },
+        {
+            "label": "Run Tests",
+            "type": "process",
+            "command": "ctest",
+            "args": [
+                "--output-on-failure",
+                "-C",
+                "Debug"
+            ],
+            "dependsOn": "CMake Build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared",
+                "clear": true
+            },
+            "problemMatcher": []
         }
     ]
 }
