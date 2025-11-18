@@ -12,8 +12,8 @@
                 "build",
                 "-G",
                 "MinGW Makefiles",
-                "-DCMAKE_C_COMPILER=D:/001_software/037_llvm/llvm/bin/clang.exe",
-                "-DCMAKE_CXX_COMPILER=D:/001_software/037_llvm/llvm/bin/clang++.exe",
+                // "-DCMAKE_C_COMPILER=D:/001_software/037_llvm/llvm/bin/clang.exe",
+                // "-DCMAKE_CXX_COMPILER=D:/001_software/037_llvm/llvm/bin/clang++.exe",
                 "-DCMAKE_BUILD_TYPE=Debug"
             ],
             "presentation": {
